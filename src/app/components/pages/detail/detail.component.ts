@@ -89,7 +89,7 @@ export class DetailComponent implements AfterViewInit {
         height: '600px',
         imagePercent: 80,
         thumbnailsPercent: 20,
-        thumbnailsMargin: 20,
+        thumbnailsMargin: 20, previewCloseOnEsc:true,
         thumbnailMargin: 20
       },
       // max-width 400
