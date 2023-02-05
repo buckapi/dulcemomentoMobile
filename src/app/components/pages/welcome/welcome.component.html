@@ -1,0 +1,136 @@
+<div class="main-container container">
+    <div class="row mb-4">
+        <div class="col-12 px-0">
+             <swiper [config]="config">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide " *ngFor='let member of members$; let i = index' [hidden]="member.userType!='member'" (click)="setUserd(member)"  style="cursor:pointer;">
+                        <a class="card text-center bg-theme text-white">
+                            <div class="card-body p-1"> 
+                                <figure class="avatar avatar-60 rounded-15 mb-1 coverimg">
+                                    <img src="{{member.images[0]}}" alt="" alt="">
+                                </figure>
+                                 <p class="text-center size-12"><small class="text-muted">{{member.name}}</small>
+                                </p>
+                            </div>
+                        </a>                               
+                    </div>
+                </div>                    
+                <div class="swiper-pagination"></div>
+            </swiper>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card theme-bg">
+                <img src="assets/assetsrest/img/highlight.png" alt="" class="burgerposition" />
+                <div class="card-body">
+                    <div class="row mt-4">
+                        <div class="col-auto align-self-center">
+                            <h4><span class="fw-light">15% Menos</span><br />Motor 350</h4>
+                        </div>
+                        <div class="col-auto align-self-center ms-auto text-end">
+                            Aceptamos
+                            <br/>
+                            <img src="assets/assetsrest/img/visa.png" alt="" />
+                            <p class="size-10"><span class="text-muted">valido hasta 01/02/2023 </span><br />
+                               
+                            </p>
+                             <h4>
+                                Por solo $ 4.000
+                                </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="row mb-4 g-0 " [hidden]="_butler.viewSelected=='cars'">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body p-0">
+                    <div class="row mx-0">
+                        <div class="col-6 col-md-4 col-lg-3 border-end p-3" *ngFor='let part of parts$; let i = index' (click)="setPreview(part)" [hidden]="(part.category.name!=_butler.categorySelected && _butler.filtered) || (_butler.userdFiltered && part.userId!= _butler.userdSelected)"  >
+                            <div class="position-relative">
+                                <div class="position-absolute start-0 top-0 z-index-1">
+                                    <div class="tag tag-small bg-theme text-white">
+                                        {{part.category.name}}
+                                    </div>
+                                </div>
+                                <div class="position-absolute end-0 top-0 z-index-1 ">
+                                  <!--   <button class="btn btn-sm btn-26 roudned-circle shadow-sm shadow-danger text-danger">
+                                        <i class="bi bi-heart size-10 vm"></i>
+                                    </button> -->
+                                </div>
+                                <figure class="avatar w-60 rounded-15 h-140 mb-3 coverimg">
+                                    <img src="{{part.images[0]}}" alt="" class="w-100">
+                                </figure>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="small"><small class="text-muted size-12">{{part.name}}</small><br />${{part.price}}</p>
+                                    </div>
+                                    <div class="col-auto px-0">
+                                        <button class="btn btn-sm btn-link text-color-theme">
+                                            <i class="bi bi-bag-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                       
+                    </div>              
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4 g-0 " [hidden]="_butler.viewSelected=='parts'">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body p-0">
+                    <div class="row mx-0">
+                        <div class="col-6 col-md-4 col-lg-3 border-end p-3" *ngFor='let car of _butler.cars$; let i = index' (click)="setPreview(car)" [hidden]="(_butler.carTypeSeted && car.carType.name!=_butler.carType.name) || (_butler.userdFiltered && car.userId!= _butler.userdSelected)" style="cursor:pointer;">
+                            <div class="position-relative">
+                                <div class="position-absolute start-0 top-0 z-index-1">
+                                    <div class="tag tag-small bg-theme text-white" [hidden]="car.vehicleStatus.name=='Nuevo'" >
+                                        {{car.vehicleStatus.name}}
+                                    </div>
+                                    <div class="tag tag-small bg-success text-black" [hidden]="car.vehicleStatus.name=='Usado'" >
+                                        {{car.vehicleStatus.name}}
+                                    </div>
+                                </div>
+                                <div class="position-absolute end-0 top-0 z-index-1 ">
+                                    <button class="btn btn-sm btn-26 roudned-circle shadow-sm shadow-danger text-danger">
+                                        <i class="bi bi-heart size-10 vm"></i>
+                                    </button>
+                                </div>
+                                <figure class="avatar w-100 rounded-15 h-140 mb-3 coverimg">
+                                    <img src="{{car.images[0]}}" alt="" class="w-100">
+                                </figure>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="small">
+                                            <small class="text-muted size-12">{{car.name}}</small>
+                                            <br />
+                                            {{car.transmision.name}}
+                                            <br/>
+                                            ${{car.price | number :'1.0'}}  
+                                        </p>
+                                    </div>
+                                    <div class="col-auto px-0">
+                                        <button class="btn btn-sm  text-color-theme" style="cursor:none;">
+                                            {{car.fuelType.name}}
+                                            <!-- <i class="bi bi-bag-plus"></i> -->
+                                            
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                       
+                    </div>              
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+        

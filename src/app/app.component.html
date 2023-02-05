@@ -1,0 +1,342 @@
+
+
+   <!-- Begin page -->
+    <main class="h-100 theme-light-radial-gradient">
+    <app-header  ></app-header>
+    <router-outlet></router-outlet>
+      
+
+    
+
+    </main>
+   
+
+    <!-- Sidebar main menu -->
+    <div class="sidebar-wrap  sidebar-fullmenu">
+        <!-- Add overlay or fullmenu instead pushcontent-->
+        <div class="closemenu text-secondary">Close Menu</div>
+        <div class="sidebar ">
+            <!-- user information -->
+            <div class="row">
+                <div class="col-12 profile-sidebar">
+                    <div class="row">
+                        <div class="col-auto">
+                            <figure class="avatar avatar-80 rounded-18 shadow-sm p-1 bg-white" (click)="colorChange('azul')">
+                                <img src="assets/assetsrest/img/user1.jpg " (click)="colorChange('azul')" alt="" class="rounded-15">
+                            </figure>
+                        </div>
+                        <div class="col px-0 align-self-center">
+                            <h5 class="mb-2">ZOFRI</h5>      <a class="nav-link" (click)="colorChange('azul')" [hidden]="color!='naranja'" tabindex="-1" >
+                              
+                                <div class="col"> <i class="bi bi-star-fill text-info small"></i></div>
+                            </a>
+                               <a class="nav-link" [hidden]="color!='azul'" (click)="colorChange('naranja')" tabindex="-1">
+                               
+                                <div class="col"> <i class="bi bi-star-fill text-warning small"></i></div>
+                            </a>
+                            <p class="text-muted size-12">Presiona para cambiar el color del tema, <br /> {{color}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- user emnu navigation -->
+            <div class="row">
+                <div class="col-12">
+                    <ul class="nav nav-pills">
+                       <!--  <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">
+                                <div class="avatar avatar-40 icon"><i class="bi bi-house-door"></i></div>
+                                <div class="col">Shop</div>
+                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="index.html#" role="button" aria-expanded="false">
+                                <div class="avatar avatar-40 icon"><i class="bi bi-cart"></i></div>
+                                <div class="col">Shop pages</div>
+                                <div class="arrow"><i class="bi bi-chevron-down plus"></i> <i class="bi bi-chevron-up minus"></i>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item nav-link" href="products.html">
+                                        <div class="avatar avatar-40 icon"><i class="bi bi-box-seam"></i>
+                                        </div>
+                                        <div class="col align-self-center">All Products</div>
+                                        <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item nav-link" href="product.html">
+                                        <div class="avatar avatar-40 icon"><i class="bi bi-box-seam"></i>
+                                        </div>
+                                        <div class="col align-self-center">Product</div>
+                                        <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item nav-link" href="cart.html">
+                                        <div class="avatar avatar-40 icon"><i class="bi bi-bag"></i>
+                                        </div>
+                                        <div class="col align-self-center">Cart</div>
+                                        <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item nav-link" href="myorders.html">
+                                        <div class="avatar avatar-40 icon"><i class="bi bi-view-list"></i>
+                                        </div>
+                                        <div class="col align-self-center">My Orders</div>
+                                        <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item nav-link" href="payment.html">
+                                        <div class="avatar avatar-40 icon"><i class="bi bi-cash-stack"></i>
+                                        </div>
+                                        <div class="col align-self-center">Payment</div>
+                                        <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item nav-link" href="invoice.html">
+                                        <div class="avatar avatar-40 icon"><i class="bi bi-receipt"></i>
+                                        </div>
+                                        <div class="col align-self-center">Invoice</div>
+                                        <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chat.html" tabindex="-1">
+                                <div class="avatar avatar-40 icon"><i class="bi bi-chat-text"></i></div>
+                                <div class="col">Messages</div>
+                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="notifications.html" tabindex="-1">
+                                <div class="avatar avatar-40 icon"><i class="bi bi-bell"></i></div>
+                                <div class="col">Notification</div>
+                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html" tabindex="-1">
+                                <div class="avatar avatar-40 icon"><i class="bi bi-newspaper"></i></div>
+                                <div class="col">Blogs</div>
+                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages.html" tabindex="-1">
+                                <div class="avatar avatar-40 icon"><i class="bi bi-file-earmark-text"></i></div>
+                                <div class="col">Pages <span class="badge bg-info fw-light">new</span></div>
+                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signin.html" tabindex="-1">
+                                <div class="avatar avatar-40 icon"><i class="bi bi-box-arrow-right"></i></div>
+                                <div class="col">Logout</div>
+                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar main menu ends -->
+
+ 
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <ul class="nav nav-pills nav-justified">
+                <li class="nav-item" [hidden]="_butler.viewSelected=='cars'"  [routerLink]="['welcome']">
+                    <a class="nav-link active" (click)="setView('parts')" style="cursor: pointer;">
+                        <span>
+                          <span class="material-symbols-outlined">
+                          view_in_ar_new
+                          </span>
+                            <span class="nav-text">Autopartes</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item" [hidden]="_butler.viewSelected=='parts'" [routerLink]="['welcome']">
+                    <a class="nav-link " (click)="setView('parts')" style="cursor: pointer;">
+                        <span>
+                          <span class="material-symbols-outlined">
+                          view_in_ar_new
+                          </span>
+                            <span class="nav-text">Autopartes</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item centerbutton" [hidden]="_butler.numProd==0">
+                    <a [routerLink]="['cart']" class="nav-link" id="centermenubtn">
+                        <span class="theme-linear-gradient">
+                            <i class="bi bi-cart-fill size-22"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item" [hidden]="_butler.viewSelected=='cars'"  [routerLink]="['welcome']">
+                    <a class="nav-link"  (click)="setView('cars')" style="cursor: pointer;">
+                        <span>
+                            <span class="material-symbols-outlined">
+                            local_car_wash
+                            </span>
+                            <span class="nav-text">Vehiculos</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item" [hidden]="_butler.viewSelected=='parts'"  [routerLink]="['welcome']">
+                    <a class="nav-link active"  (click)="setView('cars')" style="cursor: pointer;">
+                        <span>
+                            <span class="material-symbols-outlined">
+                            local_car_wash
+                            </span>
+                            <span class="nav-text">Vehiculos</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Footer ends-->
+
+    <!-- filter menu -->
+    <div class="filter">
+        <div class="card shadow h-100" >
+            <div class="card-header">
+                <div class="row">
+                    <div class="col align-self-center">
+                        <h6 class="mb-0">Busqueda avanzada</h6>
+                        <p class="text-secondary small">0 productos</p>
+                    </div>
+                    <div class="col-auto px-0">
+                        <button class="btn btn-link text-danger filter-close">
+                            <i class="bi bi-x size-22"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body overflow-auto" [hidden]="_butler.viewSelected=='parts'" >
+              <!--   <div class="form-floating mb-3">
+                    <input type="text" class="form-control" placeholder="Buscar">
+                    <label for="input-select">Buscar...</label>
+                </div>
+                <div class="mb-4">
+                    <h6>Rango de precio</h6>
+                    <div id="rangeslider" class="mt-4"></div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="number" class="form-control" min="0" max="500" value="6000" step="1" id="input-select">
+                            <label for="input-select">Minimo</label>
+                        </div>
+                    </div>
+                    <div class="col-auto align-self-center"> to </div>
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="number" class="form-control" min="0" max="500" value="200000" step="1" id="input-number">
+                            <label for="input-number">Maximo</label>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="form-floating mb-4">
+                     <select id="carType" class="form-control wide"[(ngModel)]="carType" (ngModelChange)="setVehicle(carType)" [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let vehicle of vehicles, let i = index " [ngValue]="i"> <span   style="cursor:pointer;">{{vehicle.name}}</span></option>
+                    </select>
+                    <label for="filtertype">Tipo de vehiculo</label>
+                </div>
+
+                <div class="form-group floating-form-group active mb-4">
+                    <h6 class="mb-3">Tipo de combustible</h6>
+
+                    <div class="form-check form-switch mb-2">
+                        <input type="checkbox" class="form-check-input"  checked     (click)="setFuelType('Bencina')" >
+                        <label class="form-check-label"   >bencina</label>
+                    </div>
+                    <div class="form-check form-switch mb-2" >
+                        <input type="checkbox" class="form-check-input"  checked  (click)="setFuelType('Diesel')">
+                        <label class="form-check-label">diesel</label>
+                    </div>
+                     <h6 class="mb-3">Tipo de transmision</h6>
+                    <div class="form-check form-switch mb-2">
+                        <input type="checkbox" class="form-check-input"  checked (click)="setTransmisionType('Manual')" >
+                        <label class="form-check-label" >manual</label>
+                    </div>
+                    <div class="form-check form-switch mb-2">
+                        <input type="checkbox" class="form-check-input" checked (click)="setTransmisionType('Automatica')">
+                        <label class="form-check-label" >automatica</label>
+                    </div>
+                     <h6 class="mb-3">Estado del vehiculo</h6>
+                    <div class="form-check form-switch mb-2">
+                        <input type="checkbox" class="form-check-input" checked (click)="setVehicleStatus('New')">
+                        <label class="form-check-label" >nuevo</label>
+                    </div>
+                    <div class="form-check form-switch mb-2">
+                        <input type="checkbox" class="form-check-input"checked (click)="setVehicleStatus('Used')">
+                        <label class="form-check-label" >usado</label>
+                    </div>
+                </div>
+
+
+
+            </div>
+             <div class="card-body overflow-auto" [hidden]="_butler.viewSelected=='cars'" >
+        
+
+                <div class="form-floating mb-4">
+                     <label  class="form-label">Categoria</label>
+                    <select id="district" class="form-control wide"[(ngModel)]="category" (ngModelChange)="setCategory(category)" [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let category of categories, let i = index " [ngValue]="i"> <span   style="cursor:pointer;">{{category.name}}</span></option>
+                    </select>
+                </div>
+
+               
+
+
+
+            </div>
+            <!-- <div class="card-footer">
+                <button class="btn btn-default w-100 shadow-sm btn-rounded">Search</button>
+            </div> -->
+        </div>
+    </div>
+    <!-- filter menu ends-->
+
+    <!-- PWA app install toast message -->
+    <div class="position-fixed bottom-0 start-50 translate-middle-x  z-index-99">
+        <div class="toast mb-3" role="alert" aria-live="assertive" aria-atomic="true" id="toastinstall" data-bs-animation="true">
+            <div class="toast-header">
+                <img src="assets/assetsrest/img/favicon32.png" class="rounded me-2" alt="...">
+                <strong class="me-auto">Install PWA App</strong>
+                <small>now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <div class="row">
+                    <div class="col">
+                        Click "Install" to install PWA app & experience indepedent.
+                    </div>
+                    <div class="col-auto align-self-center ps-0">
+                        <button class="btn-default btn btn-sm btn-rounded" id="addtohome">Install</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

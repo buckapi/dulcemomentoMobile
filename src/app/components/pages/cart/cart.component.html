@@ -1,0 +1,84 @@
+ <div class="main-container container">
+            <!-- products -->
+            <div class="row mb-2">
+                <div class="col-12 col-md-6 " *ngFor='let product of _butler.car; let i = index'>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto pe-0 position-relative">
+                                    <div class="position-absolute end-0 top-0 z-index-1 align-self-start p-1">
+                                       <button class="btn btn-sm btn-light btn-26 roudned-circle shadow-sm shadow-danger text-danger" (click)="remove(i)">
+                                            <i class="bi bi-trash size-10 vm"></i>
+                                        </button> 
+                                    </div>
+                                    <div class="avatar avatar-80 rounded-15 border">
+                                        <img src="{{product.images[0]}}" alt="" class="w-100">
+                                    </div>
+                                </div>
+                                <div class="col align-self-center">
+                                    <p class="mb-0"><small class="text-muted size-12">{{product.name}}</small>
+                                    </p>
+                                    <h5 class="mb-1">$ {{product.price}} </h5> x {{product.quantity}} = ${{product.price * product.quantity}}
+                                    <!-- <p class="size-10"><span class="text-success">30% OFF</span> /158 discount</p> -->
+                                </div>
+                                <div class="col-auto align-self-center">
+                                    <div class="counter-number vertical">
+                                        <button class="btn btn-sm avatar avatar-30 p-0 rounded-circle" (click)="minus(i)">
+                                            <i class="bi bi-dash size-22"></i>
+                                        </button>
+                                        <span>{{product.quantity}} </span>
+                                        <button class="btn btn-sm avatar avatar-30 p-0 rounded-circle" (click)="plus(i)">
+                                            <i class="bi bi-plus size-22"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <!-- coupon  -->
+       
+
+            <div class="row mb-4">
+                <div class="col align-self-center">
+                    <h6 class="title">Montos</h6>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <p>Cargos por envio</p>
+                </div>
+                <div class="col-auto">$ 0.00</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <p>Subtotal</p>
+                </div>
+                <div class="col-auto">$ {{_butler.subTotalGral}}</div>
+            </div>
+           
+            <div class="row mb-3">
+                <div class="col">
+                    <p>Descuento </p>
+                </div>
+                <div class="col-auto text-success">-$ 0.00</div>
+            </div>
+            <div class="row fw-bold mb-4">
+                <div class="mb-3 col-12">
+                    <div class="dashed-line"></div>
+                </div>
+                <div class="col">
+                    <p>Total</p>
+                </div>
+                <div class="col-auto">$ {{_butler.subTotalGral}}</div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <a  class="btn btn-default shadow-sm btn-lg w-100 btn-rounded">Siguiente</a>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,28 @@
+  <!-- Header -->
+        <header class="header position-fixed bg-theme-round-opac text-white">
+            <div class="row" style="  --bs-gutter-x:none;
+  --bs-gutter-y: 0;">
+                <div class="col-auto">
+                    <button type="button" class="btn btn-default btn-44 btn-rounded menu-btn">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+                <div class="col">
+                    <div class="" [routerLink]="['/']">
+                        <img src="assets/assetsrest/img/logo.png" alt="" class="" style="width: 180px;" /><!-- 
+                        <h5>OneUIUX<br /><span class="text-muted fw-light">Foodies</span></h5> -->
+                    </div>
+                </div>
+                <div class="col-auto">
+                   <!--  <a href="notifications.html" target="_self" class="btn btn-default btn-44 btn-rounded">
+                        <i class="bi bi-bell"></i>
+                        <span class="count-indicator"></span>
+                    </a> -->
+                    <button _ngcontent-hnp-c75="" class="btn btn-light btn-44 filter-btn" (click)="openFilter"  [hidden]="!router.url.includes('welcome')"><i _ngcontent-hnp-c75="" class="bi bi-search size-22" ></i></button>
+                    <a href="profile.html" target="_self" class="btn btn-default btn-44 btn-rounded ms-2">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <!-- Header ends -->
