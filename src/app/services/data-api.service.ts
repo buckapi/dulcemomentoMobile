@@ -38,67 +38,67 @@ export class DataApiService {
 		  "Content-Type":"application/json"	
 	});
 	getTransationByBranch(branch: string){
-		const url_api = `https://db.buckapi.us:9001/api/transactions?filter[where][idBranch]=${branch}`;
+		const url_api = `https://db.buckapi.us:9999/api/transactions?filter[where][idBranch]=${branch}`;
 		this.transactions = this.http.get(url_api);
 		return ( this.http.get(url_api));		
 	}
 
 	getAllBranchs(){
-		const url_api = 'https://db.buckapi.us:9001/api/branchs';
+		const url_api = 'https://db.buckapi.us:9999/api/branchs';
 		return this.http.get(url_api);
 	}
 	getAllParts(){
-		const url_api = 'https://db.buckapi.us:9001/api/products';
+		const url_api = 'https://db.buckapi.us:9999/api/products';
 		return this.http.get(url_api);
 	}
 	getAllCars(){
-		const url_api = 'https://db.buckapi.us:9001/api/cars';
+		const url_api = 'https://db.buckapi.us:9999/api/cars';
 		return this.http.get(url_api);
 	}
 	getAllCategories(){
-		const url_api = 'https://db.buckapi.us:9001/api/cards';
+		const url_api = 'https://db.buckapi.us:9999/api/cards';
 		return this.http.get(url_api);
 	}
 	getAllTransactions(){
-		const url_api = 'https://db.buckapi.us:9001/api/transactions';
+		const url_api = 'https://db.buckapi.us:9999/api/transactions';
 		return this.http.get(url_api);
 	}
 	getAllMembers(){
-		const url_api = 'https://db.buckapi.us:9001/api/cards';
+		const url_api = 'https://db.buckapi.us:9999/api/cards';
 		return this.http.get(url_api);
 	}
 	updateSpecialty(specialty :SpecialtyInterface, id: string){
-		const url_api=`https://db.buckapi.us:9001/api/branchs/${id}`;
+		const url_api=`https://db.buckapi.us:9999/api/branchs/${id}`;
 		return this.http
 		.put<SpecialtyInterface>(url_api, specialty)
 		.pipe(map(data => data));
 	}
 	deleteSpecialty( id: string){
-		const url_api=`https://db.buckapi.us:9001/api/branchs/${id}`;
+		const url_api=`https://db.buckapi.us:9999/api/branchs/${id}`;
 		return this.http
 		.delete<SpecialtyInterface>(url_api)
 		.pipe(map(data => data));
 	}
 	deleteService(id: string){
 		// let token = this.authService.getToken();
-		const url_api=`https://db.buckapi.us:9001/api/cards/${id}`;
+		const url_api=`https://db.buckapi.us:9999/api/cards/${id}`;
 		return this.http
 		.delete<ServiceInterface>(url_api)
 		.pipe(map(data => data));
 	}
 	deleteStylist(id: string){
-		const url_api=`https://db.buckapi.us:9001/api/members/${id}`;
+		const url_api=`https://db.buckapi.us:9999/api/members/${id}`;
 		return this.http
 		.delete<StylistInterface>(url_api)
 		.pipe(map(data => data));
 	}
 	getProduct(id: string){
-		const url_api = `https://db.buckapi.us:9001/api/products/${id}`;
+		const url_api = `https://db.buckapi.us:9999/api/products/${id}`;
 		return this.http.get(url_api);
 	}
 
 	getCierresByBranch(branch: string){
-		const url_api = `https://db.buckapi.us:9001/api/infos?filter[where][idBranch]=${branch}`;
+		const url_api = `https://db.buckapi.us:9999/api/infos?filter[where][idBranch]=${branch}`;
 		this.cierre = this.http.get(url_api);
 		return ( this.http.get(url_api));		
 	}
@@ -109,14 +109,14 @@ export class DataApiService {
 		return ( this.http.get(url_api));		
 	}
 	getSerialT(branch: string){
-		const url_api = `https://db.buckapi.us:9001/api/branchs/${branch}`;
+		const url_api = `https://db.buckapi.us:9999/api/branchs/${branch}`;
 		this.branch = this.http.get(url_api);
 		this.butler.serialT=this.branch.serialT;
 		return ( this.branch);		
 	}
 setSerialT(serial:SerialInterface, branch: string){
 		// let token = this.authService.getToken();
-		const url_api = `https://db.buckapi.us:9001/api/branchs/${branch}`;
+		const url_api = `https://db.buckapi.us:9999/api/branchs/${branch}`;
 		return this.http
 		.put<SerialInterface>(url_api, serial)
 		.pipe(map(data => data));
@@ -124,26 +124,26 @@ setSerialT(serial:SerialInterface, branch: string){
 
 
 	saveTicket(ticket :TicketInterface){
-		const url_api='https://db.buckapi.us:9001/api/transactions';
+		const url_api='https://db.buckapi.us:9999/api/transactions';
 		return this.http
 		.post<TicketInterface>(url_api, ticket)
 		.pipe(map(data => data));
 	}
 	saveService(service :ServiceInterface){
-		const url_api='https://db.buckapi.us:9001/api/cards';
+		const url_api='https://db.buckapi.us:9999/api/cards';
 		return this.http
 		.post<ServiceInterface>(url_api, service)
 		.pipe(map(data => data));
 	}
 	
 	saveSpecialty(specialty :SpecialtyInterface){
-		const url_api='https://db.buckapi.us:9001/api/branchs';
+		const url_api='https://db.buckapi.us:9999/api/branchs';
 		return this.http
 		.post<SpecialtyInterface>(url_api, specialty)
 		.pipe(map(data => data));
 	}
 	saveStylist(stylist :StylistInterface){
-		const url_api='https://db.buckapi.us:9001/api/members';
+		const url_api='https://db.buckapi.us:9999/api/members';
 		return this.http
 		.post<StylistInterface>(url_api, stylist)
 		.pipe(map(data => data));
