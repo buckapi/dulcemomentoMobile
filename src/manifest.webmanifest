@@ -1,8 +1,8 @@
 {
-  "name": "ZOFRI",
-  "short_name": "ZOFRI",
-  "theme_color": "#101554",
-  "background_color": "#101554",
+  "name": "Dulce Momento",
+  "short_name": "Dulce Momento",
+  "theme_color": "#f462851",
+  "background_color": "#f462851",
   "display": "fullscreen",
   "scope": "./",
   "start_url": "./",
